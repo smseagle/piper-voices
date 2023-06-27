@@ -1,6 +1,7 @@
 {
     "audio": {
-        "sample_rate": 22050
+        "sample_rate": 22050,
+        "quality": "medium"
     },
     "espeak": {
         "voice": "uk"
@@ -168,5 +169,11 @@
         "mykyta": 1,
         "tetiana": 2
     },
-    "piper_version": "1.0.0"
+    "piper_version": "1.0.0",
+    "language": {
+        "code": "uk_UK",
+        "family": "uk",
+        "region": "UK"
+    },
+    "dataset": "ukrainian_tts"
 }

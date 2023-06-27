@@ -1,6 +1,7 @@
 {
     "audio": {
-        "sample_rate": 22050
+        "sample_rate": 22050,
+        "quality": "medium"
     },
     "espeak": {
         "voice": "cmn"
@@ -473,5 +474,11 @@
     "num_symbols": 256,
     "num_speakers": 1,
     "speaker_id_map": {},
-    "piper_version": "1.0.0"
+    "piper_version": "1.0.0",
+    "language": {
+        "code": "zh_CN",
+        "family": "zh",
+        "region": "CN"
+    },
+    "dataset": "huayan"
 }

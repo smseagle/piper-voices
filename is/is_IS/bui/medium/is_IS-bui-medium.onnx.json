@@ -1,6 +1,7 @@
 {
     "audio": {
-        "sample_rate": 22050
+        "sample_rate": 22050,
+        "quality": "medium"
     },
     "espeak": {
         "voice": "is"
@@ -406,5 +407,11 @@
     "num_symbols": 130,
     "num_speakers": 1,
     "speaker_id_map": {},
-    "piper_version": "0.2.0"
+    "piper_version": "0.2.0",
+    "language": {
+        "code": "is_IS",
+        "family": "is",
+        "region": "IS"
+    },
+    "dataset": "bui"
 }

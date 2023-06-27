@@ -1,6 +1,7 @@
 {
     "audio": {
-        "sample_rate": 16000
+        "sample_rate": 16000,
+        "quality": "x_low"
     },
     "espeak": {
         "voice": "vi"
@@ -472,5 +473,11 @@
         "VIVOSDEV18": 63,
         "VIVOSDEV19": 64
     },
-    "piper_version": "0.2.0"
+    "piper_version": "0.2.0",
+    "language": {
+        "code": "vi_VN",
+        "family": "vi",
+        "region": "VN"
+    },
+    "dataset": "vivos"
 }

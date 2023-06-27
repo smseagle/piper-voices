@@ -1,6 +1,7 @@
 {
     "audio": {
-        "sample_rate": 16000
+        "sample_rate": 16000,
+        "quality": "x_low"
     },
     "espeak": {
         "voice": "ne"
@@ -425,5 +426,11 @@
         "2027": 16,
         "0649": 17
     },
-    "piper_version": "0.2.0"
+    "piper_version": "0.2.0",
+    "language": {
+        "code": "ne_NP",
+        "family": "ne",
+        "region": "NP"
+    },
+    "dataset": "google"
 }

@@ -1,6 +1,7 @@
 {
     "audio": {
-        "sample_rate": 16000
+        "sample_rate": 16000,
+        "quality": "low"
     },
     "espeak": {
         "voice": "es"
@@ -406,5 +407,11 @@
     "num_symbols": 130,
     "num_speakers": 1,
     "speaker_id_map": {},
-    "piper_version": "0.2.0"
+    "piper_version": "0.2.0",
+    "language": {
+        "code": "es_ES",
+        "family": "es",
+        "region": "ES"
+    },
+    "dataset": "mls_10246"
 }

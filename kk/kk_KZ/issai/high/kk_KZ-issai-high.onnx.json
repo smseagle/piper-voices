@@ -1,6 +1,7 @@
 {
     "audio": {
-        "sample_rate": 22050
+        "sample_rate": 22050,
+        "quality": "high"
     },
     "espeak": {
         "voice": "kk"
@@ -413,5 +414,11 @@
         "ISSAI_KazakhTTS2_F1": 4,
         "ISSAI_KazakhTTS2_F2": 5
     },
-    "piper_version": "0.2.0"
+    "piper_version": "0.2.0",
+    "language": {
+        "code": "kk_KZ",
+        "family": "kk",
+        "region": "KZ"
+    },
+    "dataset": "issai"
 }

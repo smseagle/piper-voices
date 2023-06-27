@@ -1,6 +1,7 @@
 {
     "audio": {
-        "sample_rate": 22050
+        "sample_rate": 22050,
+        "quality": "medium"
     },
     "espeak": {
         "voice": "en-us"
@@ -504,5 +505,11 @@
         "EBVS": 22,
         "SKA": 23
     },
-    "piper_version": "1.0.0"
+    "piper_version": "1.0.0",
+    "language": {
+        "code": "en_US",
+        "family": "en",
+        "region": "US"
+    },
+    "dataset": "l2arctic"
 }

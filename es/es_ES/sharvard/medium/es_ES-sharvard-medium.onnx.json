@@ -1,6 +1,7 @@
 {
     "audio": {
-        "sample_rate": 22050
+        "sample_rate": 22050,
+        "quality": "medium"
     },
     "espeak": {
         "voice": "es"
@@ -482,5 +483,11 @@
         "M": 0,
         "F": 1
     },
-    "piper_version": "1.0.0"
+    "piper_version": "1.0.0",
+    "language": {
+        "code": "es_ES",
+        "family": "es",
+        "region": "ES"
+    },
+    "dataset": "sharvard"
 }

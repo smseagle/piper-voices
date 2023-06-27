@@ -1,6 +1,7 @@
 {
     "audio": {
-        "sample_rate": 22050
+        "sample_rate": 22050,
+        "quality": "medium"
     },
     "espeak": {
         "voice": "en-gb-x-rp"
@@ -492,5 +493,11 @@
         "07": 10,
         "04": 11
     },
-    "piper_version": "1.0.0"
+    "piper_version": "1.0.0",
+    "language": {
+        "code": "en_GB",
+        "family": "en",
+        "region": "GB"
+    },
+    "dataset": "aru"
 }

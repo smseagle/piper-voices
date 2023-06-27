@@ -1,6 +1,7 @@
 {
     "audio": {
-        "sample_rate": 22050
+        "sample_rate": 22050,
+        "quality": "high"
     },
     "espeak": {
         "voice": "en-us"
@@ -1311,5 +1312,11 @@
         "4681": 902,
         "2085": 903
     },
-    "piper_version": "0.2.0"
+    "piper_version": "0.2.0",
+    "language": {
+        "code": "en_US",
+        "family": "en",
+        "region": "US"
+    },
+    "dataset": "libritts"
 }
