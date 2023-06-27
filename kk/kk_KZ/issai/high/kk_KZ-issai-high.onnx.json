@@ -412,5 +412,6 @@
         "ISSAI_KazakhTTS_F1_Raya": 3,
         "ISSAI_KazakhTTS2_F1": 4,
         "ISSAI_KazakhTTS2_F2": 5
-    }
+    },
+    "piper_version": "0.2.0"
 }

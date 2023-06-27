@@ -471,5 +471,6 @@
         "VIVOSDEV17": 62,
         "VIVOSDEV18": 63,
         "VIVOSDEV19": 64
-    }
+    },
+    "piper_version": "0.2.0"
 }
