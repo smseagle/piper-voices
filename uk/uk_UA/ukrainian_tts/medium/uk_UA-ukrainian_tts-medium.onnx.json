@@ -171,9 +171,9 @@
     },
     "piper_version": "1.0.0",
     "language": {
-        "code": "uk_UK",
+        "code": "uk_UA",
         "family": "uk",
-        "region": "UK"
+        "region": "UA"
     },
     "dataset": "ukrainian_tts"
 }

@@ -409,9 +409,9 @@
     "speaker_id_map": {},
     "piper_version": "0.2.0",
     "language": {
-        "code": "uk_UK",
+        "code": "uk_UA",
         "family": "uk",
-        "region": "UK"
+        "region": "UA"
     },
     "dataset": "lada"
 }
