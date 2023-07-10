@@ -406,7 +406,7 @@
     },
     "num_symbols": 130,
     "num_speakers": 904,
-    "pspeaker_id_map": {
+    "speaker_id_map": {
         "p3922": 0,
         "p8699": 1,
         "p4535": 2,
