@@ -2,10 +2,48 @@
 import hashlib
 import json
 import unittest
+from dataclasses import dataclass
 from pathlib import Path
 
 _DIR = Path(__file__).parent
 _REPO_DIR = _DIR.parent
+
+
+@dataclass
+class Language:
+    native: str
+    english: str
+    country: str
+
+
+_LANGUAGES = {
+    "ca_ES": Language("Català", "Catalan", "Spain"),
+    "da_DK": Language("Dansk", "Danish", "Denmark"),
+    "de_DE": Language("Deutsch", "German", "Germany"),
+    "el_GR": Language("Ελληνικά", "Greek", "Greece"),
+    "en_GB": Language("English", "English", "Great Britain"),
+    "en_US": Language("English", "English", "United States"),
+    "es_ES": Language("Español", "Spanish", "Spain"),
+    "es_MX": Language("Español", "Spanish", "Mexico"),
+    "fi_FI": Language("Suomi", "Finnish", "Finland"),
+    "fr_FR": Language("Français", "French", "France"),
+    "is_IS": Language("íslenska", "Icelandic", "Iceland"),
+    "it_IT": Language("Italiano", "Italian", "Italy"),
+    "ka_GE": Language("ქართული ენა", "Georgian", "Georgia"),
+    "kk_KZ": Language("қазақша", "Kazakh", "Kazakhstan"),
+    "ne_NP": Language("नेपाली", "Nepali", "Nepal"),
+    "nl_BE": Language("Nederlands", "Dutch", "Belgium"),
+    "nl_NL": Language("Nederlands", "Dutch", "Netherlands"),
+    "no_NO": Language("Norsk", "Norwegian", "Norway"),
+    "pl_PL": Language("Polski", "Polish", "Poland"),
+    "pt_BR": Language("Português", "Portuguese", "Brazil"),
+    "ru_RU": Language("Русский", "Russian", "Russia"),
+    "sv_SE": Language("Svenska", "Swedish", "Sweden"),
+    "sw_CD": Language("Kiswahili", "Swahili", "Democratic Republic of the Congo"),
+    "uk_UA": Language("украї́нська мо́ва", "Ukrainian", "Ukraine"),
+    "vi_VN": Language("Tiếng Việt", "Vietnamese", "Vietnam"),
+    "zh_CN": Language("简体中文", "Chinese", "China"),
+}
 
 
 class VoiceTest(unittest.TestCase):
@@ -52,6 +90,7 @@ class VoiceTest(unittest.TestCase):
                 self.assertEqual(
                     quality_dir.name, config["audio"]["quality"], "Wrong quality dir"
                 )
+                self.assertIn(lang_code_dir.name, _LANGUAGES, "Unknown language code")
 
                 # Verify file names
                 file_lang_code, file_dataset, file_quality = onnx_path.stem.split("-")
@@ -83,7 +122,14 @@ def write_voices_json():
     # {
     #   "<family>_<region>-<dataset>-<quality>": {
     #     "name": "<dataset>",
-    #     "language": "<family>_<region>",
+    #     "language": {
+    #       "code": "<family>_<region>",
+    #       "family": "<family>",
+    #       "region": "<region>",
+    #       "name_native": "<native>",
+    #       "name_english": "<english>",
+    #       "country_english": "<country>",
+    #     },
     #     "quality": "<quality>",  // x_low, low, medium, high
     #     "num_speakers": int,
     #     "speaker_id_map": {
@@ -111,6 +157,8 @@ def write_voices_json():
         quality = config["audio"]["quality"]
         dataset = config["dataset"]
         lang_code = config["language"]["code"]
+        lang_family, lang_region = lang_code.split("_", maxsplit=1)
+        lang_names = _LANGUAGES[lang_code]
         voice_key = f"{lang_code}-{dataset}-{quality}"
 
         model_card_path = voice_dir / "MODEL_CARD"
@@ -118,7 +166,14 @@ def write_voices_json():
 
         voices[voice_key] = {
             "name": dataset,
-            "language": lang_code,
+            "language": {
+                "code": lang_code,
+                "family": lang_family,
+                "region": lang_region,
+                "name_native": lang_names.native,
+                "name_english": lang_names.english,
+                "country_english": lang_names.country,
+            },
             "quality": quality,
             "num_speakers": config["num_speakers"],
             "speaker_id_map": config.get("speaker_id_map", {}),
