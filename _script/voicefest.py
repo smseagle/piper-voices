@@ -4,6 +4,7 @@ import json
 import unittest
 from dataclasses import dataclass
 from pathlib import Path
+from typing import Set
 
 _DIR = Path(__file__).parent
 _REPO_DIR = _DIR.parent
@@ -48,6 +49,8 @@ _LANGUAGES = {
 
 class VoiceTest(unittest.TestCase):
     def test_voices(self):
+        used_aliases: Set[str] = set()
+
         for onnx_path in _REPO_DIR.rglob("*.onnx"):
             with self.subTest(onnx_path=onnx_path):
                 self.assertGreater(onnx_path.stat().st_size, 0, "Empty onnx file")
@@ -109,8 +112,21 @@ class VoiceTest(unittest.TestCase):
                     file_quality, config["audio"]["quality"], "Wrong quality file"
                 )
 
+                # Verify aliases are unique
+                aliases_path = onnx_path.parent / "ALIASES"
+                if aliases_path.exists():
+                    with open(aliases_path, "r", encoding="utf-8") as aliases_file:
+                        for alias in aliases_file:
+                            alias = alias.strip()
+                            self.assertNotIn(
+                                alias,
+                                used_aliases,
+                                "Alias is already in use by another voice",
+                            )
+                            used_aliases.add(alias)
 
-def run_tests():
+
+def run_tests() -> None:
     runner = unittest.TextTestRunner()
     runner.run(unittest.makeSuite(VoiceTest))
 
@@ -118,9 +134,10 @@ def run_tests():
 # -----------------------------------------------------------------------------
 
 
-def write_voices_json():
+def write_voices_json() -> None:
     # {
     #   "<family>_<region>-<dataset>-<quality>": {
+    #     "key": "<voice_key>",
     #     "name": "<dataset>",
     #     "language": {
     #       "code": "<family>_<region>",
@@ -142,7 +159,8 @@ def write_voices_json():
     #         "md5_digest": str,        // hex
     #       },
     #       ...
-    #     }
+    #     },
+    #     "aliases": ["alias", ...],
     #   },
     #   ...
     # }
@@ -164,7 +182,15 @@ def write_voices_json():
         model_card_path = voice_dir / "MODEL_CARD"
         assert model_card_path.exists(), f"Missing {model_card_path}"
 
+        aliases: Set[str] = set()
+        aliases_path = voice_dir / "ALIASES"
+        if aliases_path.exists():
+            with open(aliases_path, "r", encoding="utf-8") as aliases_file:
+                for alias in aliases_file:
+                    aliases.add(alias.strip())
+
         voices[voice_key] = {
+            "key": voice_key,
             "name": dataset,
             "language": {
                 "code": lang_code,
@@ -188,6 +214,7 @@ def write_voices_json():
                     model_card_path,
                 )
             },
+            "aliases": sorted(list(aliases)),
         }
 
     with open(_REPO_DIR / "voices.json", "w", encoding="utf-8") as voices_file:
