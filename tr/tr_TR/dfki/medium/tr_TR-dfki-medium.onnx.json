@@ -1,5 +1,5 @@
 {
-  "piper_version": "1.1.0",
+  "piper_version": "1.2.0",
   "audio": {
     "sample_rate": 22050,
     "quality": "medium"
@@ -10,7 +10,12 @@
   "inference": {
     "noise_scale": 0.667,
     "length_scale": 1,
-    "noise_w": 0.8
+    "noise_w": 0.8,
+    "phoneme_silence": {
+        ",": 0.1,
+        ":": 0.1,
+        ";": 0.1
+    }
   },
   "phoneme_type": "espeak",
   "phoneme_map": {},
