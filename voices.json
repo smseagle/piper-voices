@@ -640,6 +640,36 @@
             "kk-iseke-x-low"
         ]
     },
+    "lb_LU-marylux-medium": {
+        "key": "lb_LU-marylux-medium",
+        "name": "marylux",
+        "language": {
+            "code": "lb_LU",
+            "family": "lb",
+            "region": "LU",
+            "name_native": "Lëtzebuergesch",
+            "name_english": "Luxembourgish",
+            "country_english": "Luxembourg"
+        },
+        "quality": "medium",
+        "num_speakers": 1,
+        "speaker_id_map": {},
+        "files": {
+            "lb/lb_LU/marylux/medium/lb_LU-marylux-medium.onnx": {
+                "size_bytes": 63201294,
+                "md5_digest": "966856e665a46cee45cb0cd2c475f8d5"
+            },
+            "lb/lb_LU/marylux/medium/lb_LU-marylux-medium.onnx.json": {
+                "size_bytes": 4979,
+                "md5_digest": "aea98b0e4fecaa0b3b7adc2048561095"
+            },
+            "lb/lb_LU/marylux/medium/MODEL_CARD": {
+                "size_bytes": 330,
+                "md5_digest": "1eeb3d600789cdd8b3f23866023d8543"
+            }
+        },
+        "aliases": []
+    },
     "pt_BR-faber-medium": {
         "key": "pt_BR-faber-medium",
         "name": "faber",
@@ -860,6 +890,45 @@
         },
         "aliases": []
     },
+    "de_DE-thorsten_emotional-medium": {
+        "key": "de_DE-thorsten_emotional-medium",
+        "name": "thorsten_emotional",
+        "language": {
+            "code": "de_DE",
+            "family": "de",
+            "region": "DE",
+            "name_native": "Deutsch",
+            "name_english": "German",
+            "country_english": "Germany"
+        },
+        "quality": "medium",
+        "num_speakers": 8,
+        "speaker_id_map": {
+            "amused": 0,
+            "angry": 1,
+            "disgusted": 2,
+            "drunk": 3,
+            "neutral": 4,
+            "sleepy": 5,
+            "surprised": 6,
+            "whisper": 7
+        },
+        "files": {
+            "de/de_DE/thorsten_emotional/medium/de_DE-thorsten_emotional-medium.onnx": {
+                "size_bytes": 76745905,
+                "md5_digest": "7cc67d24d9d0b34d7a4f6224d16236b9"
+            },
+            "de/de_DE/thorsten_emotional/medium/de_DE-thorsten_emotional-medium.onnx.json": {
+                "size_bytes": 5031,
+                "md5_digest": "1abac7e46522f774217c170da222f2a6"
+            },
+            "de/de_DE/thorsten_emotional/medium/MODEL_CARD": {
+                "size_bytes": 302,
+                "md5_digest": "91874c31e5b2e497ecda2ea8e6fda4a7"
+            }
+        },
+        "aliases": []
+    },
     "de_DE-ramona-low": {
         "key": "de_DE-ramona-low",
         "name": "ramona",
@@ -955,6 +1024,36 @@
         "aliases": [
             "da-nst_talesyntese-medium"
         ]
+    },
+    "ro_RO-mihai-medium": {
+        "key": "ro_RO-mihai-medium",
+        "name": "mihai",
+        "language": {
+            "code": "ro_RO",
+            "family": "ro",
+            "region": "RO",
+            "name_native": "Română",
+            "name_english": "Romanian",
+            "country_english": "Romania"
+        },
+        "quality": "medium",
+        "num_speakers": 1,
+        "speaker_id_map": {},
+        "files": {
+            "ro/ro_RO/mihai/medium/ro_RO-mihai-medium.onnx": {
+                "size_bytes": 63201294,
+                "md5_digest": "45f4253916c93d3d05ad3fe1b07ea4f3"
+            },
+            "ro/ro_RO/mihai/medium/ro_RO-mihai-medium.onnx.json": {
+                "size_bytes": 4877,
+                "md5_digest": "f820f8ba65a8646c68792be581b85144"
+            },
+            "ro/ro_RO/mihai/medium/MODEL_CARD": {
+                "size_bytes": 277,
+                "md5_digest": "4075864685b207c9a98bf1af237a1502"
+            }
+        },
+        "aliases": []
     },
     "is_IS-ugla-medium": {
         "key": "is_IS-ugla-medium",
@@ -3405,6 +3504,39 @@
         },
         "aliases": []
     },
+    "sr_RS-serbski_institut-medium": {
+        "key": "sr_RS-serbski_institut-medium",
+        "name": "serbski_institut",
+        "language": {
+            "code": "sr_RS",
+            "family": "sr",
+            "region": "RS",
+            "name_native": "srpski",
+            "name_english": "Serbian",
+            "country_english": "Serbia"
+        },
+        "quality": "medium",
+        "num_speakers": 2,
+        "speaker_id_map": {
+            "dsb": 0,
+            "hsb": 1
+        },
+        "files": {
+            "sr/sr_RS/serbski_institut/medium/sr_RS-serbski_institut-medium.onnx": {
+                "size_bytes": 76733615,
+                "md5_digest": "02c6e27ac7b4dfa84272df89edca9feb"
+            },
+            "sr/sr_RS/serbski_institut/medium/sr_RS-serbski_institut-medium.onnx.json": {
+                "size_bytes": 4999,
+                "md5_digest": "dacee7595352af9b4d78bb42237bd759"
+            },
+            "sr/sr_RS/serbski_institut/medium/MODEL_CARD": {
+                "size_bytes": 343,
+                "md5_digest": "407a5b8ebef4877405de2e89eb806633"
+            }
+        },
+        "aliases": []
+    },
     "sw_CD-lanfrica-medium": {
         "key": "sw_CD-lanfrica-medium",
         "name": "lanfrica",
@@ -3621,6 +3753,36 @@
             "fi/fi_FI/harri/medium/MODEL_CARD": {
                 "size_bytes": 304,
                 "md5_digest": "95d5aff86d27b69c8ee7deed6c056aff"
+            }
+        },
+        "aliases": []
+    },
+    "tr_TR-dfki-medium": {
+        "key": "tr_TR-dfki-medium",
+        "name": "dfki",
+        "language": {
+            "code": "tr_TR",
+            "family": "tr",
+            "region": "TR",
+            "name_native": "Türkçe",
+            "name_english": "Turkish",
+            "country_english": "Turkey"
+        },
+        "quality": "medium",
+        "num_speakers": 1,
+        "speaker_id_map": {},
+        "files": {
+            "tr/tr_TR/dfki/medium/tr_TR-dfki-medium.onnx": {
+                "size_bytes": 63201294,
+                "md5_digest": "f51287b350a042dd8d67b2b215145e5a"
+            },
+            "tr/tr_TR/dfki/medium/tr_TR-dfki-medium.onnx.json": {
+                "size_bytes": 4874,
+                "md5_digest": "d76424a40a79733bfbe59751e949b9ff"
+            },
+            "tr/tr_TR/dfki/medium/MODEL_CARD": {
+                "size_bytes": 319,
+                "md5_digest": "870d6bc19719328699449cb7b4dd56cf"
             }
         },
         "aliases": []

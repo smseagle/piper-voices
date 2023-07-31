@@ -32,19 +32,65 @@ _LANGUAGES = {
     "it_IT": Language("Italiano", "Italian", "Italy"),
     "ka_GE": Language("ქართული ენა", "Georgian", "Georgia"),
     "kk_KZ": Language("қазақша", "Kazakh", "Kazakhstan"),
+    "lb_LU": Language("Lëtzebuergesch", "Luxembourgish", "Luxembourg"),
     "ne_NP": Language("नेपाली", "Nepali", "Nepal"),
     "nl_BE": Language("Nederlands", "Dutch", "Belgium"),
     "nl_NL": Language("Nederlands", "Dutch", "Netherlands"),
     "no_NO": Language("Norsk", "Norwegian", "Norway"),
     "pl_PL": Language("Polski", "Polish", "Poland"),
     "pt_BR": Language("Português", "Portuguese", "Brazil"),
+    "ro_RO": Language("Română", "Romanian", "Romania"),
     "ru_RU": Language("Русский", "Russian", "Russia"),
+    "sr_RS": Language("srpski", "Serbian", "Serbia"),
     "sv_SE": Language("Svenska", "Swedish", "Sweden"),
     "sw_CD": Language("Kiswahili", "Swahili", "Democratic Republic of the Congo"),
+    "tr_TR": Language("Türkçe", "Turkish", "Turkey"),
     "uk_UA": Language("украї́нська мо́ва", "Ukrainian", "Ukraine"),
     "vi_VN": Language("Tiếng Việt", "Vietnamese", "Vietnam"),
     "zh_CN": Language("简体中文", "Chinese", "China"),
 }
+
+# -----------------------------------------------------------------------------
+
+
+def add_languages():
+    for onnx_path in _REPO_DIR.rglob("*.onnx"):
+        config_path = f"{onnx_path}.json"
+        with open(config_path, "r", encoding="utf-8") as config_file:
+            config = json.load(config_file)
+
+        lang_code, dataset, quality = onnx_path.stem.split("-")
+        is_changed = False
+
+        if "language" not in config:
+            lang_info = _LANGUAGES.get(lang_code)
+            assert lang_info is not None, f"Missing name for language: {lang_code}"
+
+            lang_family, lang_region = lang_code.split("_", maxsplit=1)
+            config["language"] = {
+                "code": lang_code,
+                "family": lang_family,
+                "region": lang_region,
+                "name_native": lang_info.native,
+                "name_english": lang_info.english,
+                "country_english": lang_info.country,
+            }
+            is_changed = True
+
+        if "dataset" not in config:
+            config["dataset"] = dataset
+            is_changed = True
+
+        if "quality" not in config["audio"]:
+            config["audio"]["quality"] = quality
+            is_changed = True
+
+        if is_changed:
+            with open(config_path, "w", encoding="utf-8") as config_file:
+                json.dump(config, config_file, ensure_ascii=False, indent=2)
+
+
+# -----------------------------------------------------------------------------
 
 
 class VoiceTest(unittest.TestCase):
@@ -109,7 +155,7 @@ class VoiceTest(unittest.TestCase):
                 )
                 self.assertEqual(file_dataset, config["dataset"], "Wrong dataset file")
                 self.assertEqual(
-                    file_quality, config["audio"]["quality"], "Wrong quality file"
+                    file_quality, config["audio"]["quality"], "Wrong quality"
                 )
 
                 # Verify aliases are unique
@@ -128,7 +174,8 @@ class VoiceTest(unittest.TestCase):
 
 def run_tests() -> None:
     runner = unittest.TextTestRunner()
-    runner.run(unittest.makeSuite(VoiceTest))
+    result = runner.run(unittest.makeSuite(VoiceTest))
+    assert not result.failures, "Test failures"
 
 
 # -----------------------------------------------------------------------------
@@ -236,6 +283,7 @@ def get_file_hash(path, bytes_per_chunk: int = 8192) -> str:
 # -----------------------------------------------------------------------------
 
 if __name__ == "__main__":
+    add_languages()
     run_tests()
 
     print("Writing voices.json")
