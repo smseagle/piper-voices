@@ -213,7 +213,7 @@ def write_voices_json() -> None:
     # }
     voices = {}
 
-    for onnx_path in _REPO_DIR.rglob("*.onnx"):
+    for onnx_path in sorted(_REPO_DIR.rglob("*.onnx")):
         voice_dir = onnx_path.parent
         config_path = voice_dir / f"{onnx_path.name}.json"
         with open(config_path, "r", encoding="utf-8") as config_file:
