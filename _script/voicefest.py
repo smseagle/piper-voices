@@ -19,6 +19,7 @@ class Language:
 
 _LANGUAGES = {
     "ca_ES": Language("Català", "Catalan", "Spain"),
+    "cs_CZ": Language("Čeština", "Czech", "Czech Republic"),
     "da_DK": Language("Dansk", "Danish", "Denmark"),
     "de_DE": Language("Deutsch", "German", "Germany"),
     "el_GR": Language("Ελληνικά", "Greek", "Greece"),
@@ -30,6 +31,7 @@ _LANGUAGES = {
     "fr_FR": Language("Français", "French", "France"),
     "is_IS": Language("íslenska", "Icelandic", "Iceland"),
     "it_IT": Language("Italiano", "Italian", "Italy"),
+    "hu_HU": Language("Magyar", "Hungarian", "Hungary"),
     "ka_GE": Language("ქართული ენა", "Georgian", "Georgia"),
     "kk_KZ": Language("қазақша", "Kazakh", "Kazakhstan"),
     "lb_LU": Language("Lëtzebuergesch", "Luxembourgish", "Luxembourg"),
@@ -39,8 +41,10 @@ _LANGUAGES = {
     "no_NO": Language("Norsk", "Norwegian", "Norway"),
     "pl_PL": Language("Polski", "Polish", "Poland"),
     "pt_BR": Language("Português", "Portuguese", "Brazil"),
+    "pt_PT": Language("Português", "Portuguese", "Portugal"),
     "ro_RO": Language("Română", "Romanian", "Romania"),
     "ru_RU": Language("Русский", "Russian", "Russia"),
+    "sk_SK": Language("Slovenčina", "Slovak", "Slovakia"),
     "sr_RS": Language("srpski", "Serbian", "Serbia"),
     "sv_SE": Language("Svenska", "Swedish", "Sweden"),
     "sw_CD": Language("Kiswahili", "Swahili", "Democratic Republic of the Congo"),
