@@ -18,6 +18,7 @@ class Language:
 
 
 _LANGUAGES = {
+    "ar_JO": Language("العربية", "Arabic", "Jordan"),
     "ca_ES": Language("Català", "Catalan", "Spain"),
     "cs_CZ": Language("Čeština", "Czech", "Czech Republic"),
     "da_DK": Language("Dansk", "Danish", "Denmark"),
@@ -66,20 +67,47 @@ def add_languages():
         lang_code, dataset, quality = onnx_path.stem.split("-")
         is_changed = False
 
-        if "language" not in config:
-            lang_info = _LANGUAGES.get(lang_code)
-            assert lang_info is not None, f"Missing name for language: {lang_code}"
+        lang_info = _LANGUAGES.get(lang_code)
+        assert lang_info is not None, f"Missing name for language: {lang_code}"
 
-            lang_family, lang_region = lang_code.split("_", maxsplit=1)
-            config["language"] = {
-                "code": lang_code,
-                "family": lang_family,
-                "region": lang_region,
-                "name_native": lang_info.native,
-                "name_english": lang_info.english,
-                "country_english": lang_info.country,
-            }
+        lang_family, lang_region = lang_code.split("_", maxsplit=1)
+        lang_dict = {
+            "code": lang_code,
+            "family": lang_family,
+            "region": lang_region,
+            "name_native": lang_info.native,
+            "name_english": lang_info.english,
+            "country_english": lang_info.country,
+        }
+
+        if "language" not in config:
+            config["language"] = lang_dict
             is_changed = True
+        else:
+            current_lang_dict = config["language"]
+            if "code" not in current_lang_dict:
+                current_lang_dict["code"] = lang_dict["code"]
+                is_changed = True
+
+            if "family" not in current_lang_dict:
+                current_lang_dict["family"] = lang_dict["family"]
+                is_changed = True
+
+            if "region" not in current_lang_dict:
+                current_lang_dict["region"] = lang_dict["region"]
+                is_changed = True
+
+            if "name_native" not in current_lang_dict:
+                current_lang_dict["name_native"] = lang_dict["name_native"]
+                is_changed = True
+
+            if "name_english" not in current_lang_dict:
+                current_lang_dict["name_english"] = lang_dict["name_english"]
+                is_changed = True
+
+            if "country_english" not in current_lang_dict:
+                current_lang_dict["country_english"] = lang_dict["country_english"]
+                is_changed = True
 
         if "dataset" not in config:
             config["dataset"] = dataset
