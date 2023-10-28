@@ -1,4 +1,34 @@
 {
+    "ar_JO-kareem-low": {
+        "key": "ar_JO-kareem-low",
+        "name": "kareem",
+        "language": {
+            "code": "ar_JO",
+            "family": "ar",
+            "region": "JO",
+            "name_native": "العربية",
+            "name_english": "Arabic",
+            "country_english": "Jordan"
+        },
+        "quality": "low",
+        "num_speakers": 1,
+        "speaker_id_map": {},
+        "files": {
+            "ar/ar_JO/kareem/low/ar_JO-kareem-low.onnx": {
+                "size_bytes": 63201294,
+                "md5_digest": "d335cd06fe4045a7ee9d8fb0712afaa9"
+            },
+            "ar/ar_JO/kareem/low/ar_JO-kareem-low.onnx.json": {
+                "size_bytes": 5022,
+                "md5_digest": "465724f7d2d5f2ff061b53acb8e7f7cc"
+            },
+            "ar/ar_JO/kareem/low/MODEL_CARD": {
+                "size_bytes": 274,
+                "md5_digest": "b6f0eaf5a7fd094be22a1bcb162173fb"
+            }
+        },
+        "aliases": []
+    },
     "ar_JO-kareem-medium": {
         "key": "ar_JO-kareem-medium",
         "name": "kareem",
@@ -1075,6 +1105,36 @@
             "en/en_US/danny/low/MODEL_CARD": {
                 "size_bytes": 275,
                 "md5_digest": "62d30d0cccea265949980cb48212ebee"
+            }
+        },
+        "aliases": []
+    },
+    "en_US-hfc_female-medium": {
+        "key": "en_US-hfc_female-medium",
+        "name": "hfc_female",
+        "language": {
+            "code": "en_US",
+            "family": "en",
+            "region": "US",
+            "name_native": "English",
+            "name_english": "English",
+            "country_english": "United States"
+        },
+        "quality": "medium",
+        "num_speakers": 1,
+        "speaker_id_map": {},
+        "files": {
+            "en/en_US/hfc_female/medium/en_US-hfc_female-medium.onnx": {
+                "size_bytes": 63201294,
+                "md5_digest": "7abec91f1d6e19e913fbc4a333f62787"
+            },
+            "en/en_US/hfc_female/medium/en_US-hfc_female-medium.onnx.json": {
+                "size_bytes": 5033,
+                "md5_digest": "c3d00f54dac3b4068f2576c15c5da3bc"
+            },
+            "en/en_US/hfc_female/medium/MODEL_CARD": {
+                "size_bytes": 354,
+                "md5_digest": "a4a7b5da65e03e6972e44e9555a59aef"
             }
         },
         "aliases": []
