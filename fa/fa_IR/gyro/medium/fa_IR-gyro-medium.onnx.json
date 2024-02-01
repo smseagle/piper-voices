@@ -1,14 +1,14 @@
 {
-  "dataset": "perpipe",
+  "dataset": "gyro",
   "audio": {
     "sample_rate": 22050,
-    "quality": "Medium"
+    "quality": "medium"
   },
   "espeak": {
     "voice": "fa"
   },
   "language": {
-    "code": "fa",
+    "code": "fa_IR",
     "family": "fa",
     "region": "IR",
     "name_native": "فارسی",
