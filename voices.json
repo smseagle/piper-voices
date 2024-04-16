@@ -4061,11 +4061,11 @@
         "files": {
             "fa/fa_IR/gyro/medium/fa_IR-gyro-medium.onnx": {
                 "size_bytes": 63122309,
-                "md5_digest": "479695db58b82141fc48f0499a38a7c9"
+                "md5_digest": "e8ce094894c8ec2a77bfd0397b45d112"
             },
             "fa/fa_IR/gyro/medium/fa_IR-gyro-medium.onnx.json": {
-                "size_bytes": 4958,
-                "md5_digest": "6289e9785140547040a1e616388dd587"
+                "size_bytes": 7210,
+                "md5_digest": "15bcedc4117870524b30b0e07bdee27f"
             },
             "fa/fa_IR/gyro/medium/MODEL_CARD": {
                 "size_bytes": 262,
