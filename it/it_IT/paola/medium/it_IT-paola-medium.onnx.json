@@ -8,7 +8,7 @@
         "voice": "it"
     },
     "inference": {
-        "noise_scale": 0.667,
+        "noise_scale": 0.8,
         "length_scale": 1,
         "noise_w": 0.8
     },
