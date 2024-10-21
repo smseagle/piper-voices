@@ -38,6 +38,7 @@ _LANGUAGES = {
     "ka_GE": Language("ქართული ენა", "Georgian", "Georgia"),
     "kk_KZ": Language("қазақша", "Kazakh", "Kazakhstan"),
     "lb_LU": Language("Lëtzebuergesch", "Luxembourgish", "Luxembourg"),
+    "lv_LV": Language("Latviešu", "Latvian", "Latvia"),
     "ne_NP": Language("नेपाली", "Nepali", "Nepal"),
     "nl_BE": Language("Nederlands", "Dutch", "Belgium"),
     "nl_NL": Language("Nederlands", "Dutch", "Netherlands"),
