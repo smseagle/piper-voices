@@ -1,5 +1,41 @@
 ---
 license: mit
+language:
+- ka
+- cs
+- zh
+- is
+- fa
+- fr
+- de
+- es
+- it
+- en
+- sk
+- no
+- ca
+- sl
+- cy
+- ro
+- pl
+- sv
+- ar
+- lv
+- lb
+- fi
+- hu
+- uk
+- vi
+- ru
+- pt
+- da
+- ne
+- sr
+- el
+- sw
+- tr
+- kk
+- nl
 ---
 
 Voices for [Piper](https://github.com/rhasspy/piper) text to speech system.
